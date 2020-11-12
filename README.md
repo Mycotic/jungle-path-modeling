@@ -2,6 +2,8 @@
 
 The goal of this project is to build a model that tells a player where they should go next based on what a professional player would do in their position. This tool could be useful for newer players trying to learn the game. Eventually it could be used to talk about player behavior when preparing for professional games.
 
+Slides: https://docs.google.com/presentation/d/1dhXpLTaagkXAysEm4DIsWvl3If89A-RqX1mbjWtLCNo/edit?usp=sharing
+
 ## Installation
 
 need to get an api key before running code from here:
@@ -9,11 +11,18 @@ https://developer.riotgames.com/
 and save it in a text file api-key.txt in data
 
 run order:
+
 get-champion-ids
+
 request-clid-match-history
+
 pull-timelines (need to run request functs with a delay between them for now)
+
 EDA
+
 final-modeling-epoch-30
+
+(files starting with window were those that I used in my presentation/images and are less accurate/successful - kept in for reference)
 
 ## About League of Legends and Junglers
 
