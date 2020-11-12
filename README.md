@@ -13,7 +13,7 @@ get-champion-ids
 request-clid-match-history
 pull-timelines (need to run request functs with a delay between them for now)
 EDA
-window-making-with-keras-guide-code
+final-modeling-epoch-30
 
 ## About League of Legends and Junglers
 
@@ -34,6 +34,7 @@ I requested the timelines of Clid's 200 most recent Lee Sin games, which are giv
 
 
 Here are some boxplots of these stats for Clid vs a random player on his team based on all the games in the train set:
+
 ![current gold boxplot](https://raw.githubusercontent.com/Mycotic/jungle-path-modeling/main/images/current-gold-plot.png)
 ![total gold boxplot](https://raw.githubusercontent.com/Mycotic/jungle-path-modeling/main/images/total-gold-plot.png)
 ![level boxplot](https://raw.githubusercontent.com/Mycotic/jungle-path-modeling/main/images/level-plot.png)
@@ -82,7 +83,7 @@ I've come up with two potential reasons models with 30 epochs are performing bet
 
 One important thing I realized halfway into this project was that, unlike normal time series, time isn't a redundant feature, because the time isn't linearly increasing in the train set (it strictly would range from 0 to 20). This would let the model learn the timings of objectives and make predictions based on it. More generally, and redundant feature of a time series in a game has the potential to be significant in this combined time series dataset. I did actually make use of this by using the side indicator, but there are so many more potential features that could be added that are game specific, like which champion each player is playing as.
 
-There's also a lot more information in the timelines given by the API, but many of them are observed separately from the time frames given to us - integrating them into the model would likely mean adding their events to the previous or next time step, which would be fairly complicated.
+There's also a lot more information in the timelines given by the API, but many of them are observed separately from the time frames given to us - integrating them into the model would likely mean adding their events to the previous or next time step, which would be fairly complicated. 
 
 Finally, the model could be trained on more players and more champions, and then make predictions based on what champion a player is using. This more general model could also be with transfer learning to learn on a new player or champion.
 
